@@ -1,7 +1,7 @@
 import { AppDataSource } from '../config/database.config';
 import { User } from '../entities/user.entity';
 import { AppError } from '../middlewares/error-handler.middleware';
-import jwt, { Secret, SignOptions } from 'jsonwebtoken';
+import jwt, { Secret } from 'jsonwebtoken';
 import env from '../config/env.config';
 import { SignupInput } from '../validators/auth.validator';
 import { hashPassword, comparePasswords } from '../utils/password.utils';
@@ -34,7 +34,6 @@ export class AuthService {
         return jwt.sign(
             { userId: user.id, roles: user.roles },
             env.JWT_SECRET as Secret,
-            { expiresIn: env.JWT_EXPIRES_IN } as SignOptions
         );
     }
 
