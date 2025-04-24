@@ -2,7 +2,7 @@
 module.exports = {
 	apps: [
 		{
-			name: "api.arenasportsacademyug.org",
+			name: "arenasportsacademy",
 			script: "dist/app.js",
 			watch: false,
 			ignore_watch: ["dist"],
