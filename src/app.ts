@@ -5,7 +5,7 @@ import helmet from 'helmet';
 import compression from 'compression';
 import cors from 'cors';
 import morgan from 'morgan';
-import rateLimit from 'express-rate-limit';
+// import rateLimit from 'express-rate-limit';
 import { AppDataSource } from './config/database.config';
 import { errorHandler } from './middlewares/error-handler.middleware';
 import env from './config/env.config';
@@ -52,10 +52,10 @@ app.use( express.json() );
 app.use( express.urlencoded( { extended: true } ) );
 app.use( express.static( 'public' ) );
 
-app.use( rateLimit( {
-  windowMs: 15 * 60 * 1000, // 15 minutes
-  max: 100
-} ) );
+// app.use( rateLimit( {
+//   windowMs: 15 * 60 * 1000, // 15 minutes
+//   max: 5000
+// } ) );
 
 const API_VERSION = 'v1';
 
