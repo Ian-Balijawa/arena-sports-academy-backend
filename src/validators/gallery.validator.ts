@@ -2,7 +2,7 @@ import { z } from 'zod';
 
 export const galleryItemSchema = z.object( {
     title: z.string().min( 1 ).max( 200 ),
-    category: z.enum( ['events', 'stays', 'activity', 'competitions', 'videos'] ),
+    category: z.enum( ['events', 'stays', 'activity', 'competitions','facilities', 'training', 'videos'] ),
     imageUrl: z.union( [z.string().url(), z.literal( "" )] ).optional(),
     videoUrl: z.union( [z.string().url(), z.literal( "" )] ).optional(),
     type: z.enum( ['image', 'video', 'both'] ),
